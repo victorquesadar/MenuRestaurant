@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Restaurante - Menú</title>
+    <link rel="stylesheet" href="/css/stylesMeetings.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo del Restaurante">
+        <span>El Restaurante</span>
+    </div>
+</header>
+
+<main>
+    <div class="menu-container" style="display: flex;">
+        <!-- Categorías a la izquierda -->
+        <div class="categorias-container">
+            <h2>Categorías</h2>
+            <ul id="categoriasList">
+                <!-- Las categorías se cargarán dinámicamente aquí -->
+            </ul>
+        </div>
+
+        <!-- Platillos en el centro -->
+        <div class="platillos-container">
+            <h2>Menú</h2>
+            <div id="welcomeMessage">
+                <img src="Menu.png" alt="Menú de Bienvenida">
+                <p>Seleccione una CATEGORÍA en el panel de la izquierda para mostrar sus deliciosos platillos...</p>
+            </div>
+            <table id="menuTable" class="menu-table" style="display:none;">
+                <thead>
+                <tr>
+                    <th>Platillo</th>
+                    <th>Precio</th>
+                    <th>Agregar</th>
+                </tr>
+                </thead>
+                <tbody id="platillosList">
+                <!-- Los platillos se cargarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Orden a la derecha -->
+        <div class="orden-container">
+            <h2>Orden</h2>
+            <ul id="ordenList">
+                <!-- Los platillos agregados a la orden se mostrarán aquí -->
+            </ul>
+            <div>Total: <span id="total">0</span> €</div>
+            <button id="comprar">Comprar</button>
+        </div>
+    </div>
+</main>
+
+<!-- Modal para agregar platillo -->
+<div id="platilloModal" class="modal">
+    <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p id="modalPrice"></p>
+        <label for="sizeSelect">Tamaño:</label>
+        <select id="sizeSelect">
+            <option value="Regular">Regular</option>
+            <option value="Grande">Grande</option>
+        </select>
+        <label for="modalQuantity">Cantidad:</label>
+        <input type="number" id="modalQuantity" value="1" min="1">
+        <button id="confirmAdd">Agregar</button>
+        <button onclick="cerrarModal()">Cancelar</button>
+    </div>
+</div>
+
+<!-- Modal de confirmación de compra -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <p>SU PEDIDO HA SIDO ACEPTADO!</p>
+        <p></p> <!-- Aquí se mostrará el número de orden -->
+        <button onclick="cerrarModal()">Aceptar</button>
+    </div>
+</div>
+
+<footer>
+    <p>Total Soft Inc.
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+    </p>
+    <p>&copy; 2023 TSf. Inc.</p>
+</footer>
+<script src="/js/scriptMeeting.js"></script>
+</body>
+</html>
